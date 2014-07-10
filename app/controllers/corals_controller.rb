@@ -1,4 +1,5 @@
 class CoralsController < ApplicationController
+  before_action :signed_in_user, only: [:index, :edit, :update, :show, :destroy]
   before_action :set_coral, only: [:show, :edit, :update, :destroy]
 
   # GET /corals

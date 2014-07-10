@@ -42,7 +42,7 @@
     <% @temp = @files.find_all{|item| item.include? img } %>
 
     <% @temp.each do |file| %>
-      <%= link_to file.split('/').last, @file_path + 'csf_files/' + file.split('/').last  %><br/>
+      <%= link_to file.split('/').last, @file_path + 'csf_files/' + file.split('/').last, :target => '_blank'  %><br/>
     <% end %>
 
   </div>
@@ -53,7 +53,7 @@
     <% @temp_csf = @files_csf.find_all{|item| item.include? img } %>
 
     <% @temp_csf.each do |i| %>
-      <%= link_to image_tag(image_path('csf/' + i.split('/').last), :width => 325), image_path('csf/' + i.split('/').last) %>
+      <%= link_to image_tag(image_path('csf/' + i.split('/').last), :width => 325), image_path('csf/' + i.split('/').last), :target => '_blank' %>
     <% end %>
 
     <h3>Outlined Images</h3>
@@ -61,7 +61,7 @@
     <% @temp_outline = @files_outline.find_all{|item| item.include? img } %>
 
     <% @temp_outline.each do |o| %>
-      <%= link_to image_tag(image_path('csf_outlines/' + o.split('/').last), :width => 325), image_path('csf_outlines/' + o.split('/').last) %>
+      <%= link_to image_tag(image_path('csf_outlines/' + o.split('/').last), :width => 325), image_path('csf_outlines/' + o.split('/').last), :target => '_blank' %>
     <% end %>
 
 
