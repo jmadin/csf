@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyString
+  exposure: MyString
+  image_id: 1
+  species: MyString
+  growth_form: MyString
+  distance: 9.99
+  notes: MyText
+
+two:
+  location: MyString
+  exposure: MyString
+  image_id: 1
+  species: MyString
+  growth_form: MyString
+  distance: 9.99
+  notes: MyText

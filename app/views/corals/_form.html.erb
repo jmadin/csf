@@ -1,0 +1,39 @@
+<%= form_for(@coral) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <div class="form-group">
+    <%= f.label :location %><br>
+    <%#= f.text_field :location, class: "form-control" %>
+    <%= f.select :location, ["HI", "LI"], {}, { class: "form-control" } %>
+  </div>
+  <div class="form-group">
+    <%= f.label :exposure %><br>
+    <%#= f.text_field :exposure, class: "form-control" %>
+    <%= f.select :exposure, ["E1", "E2", "E3", "E4", "E5", "BM"], {}, { class: "form-control" } %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image_id %><br>
+    <%= f.number_field :image_id, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :species %><br>
+    <%= f.text_field :species, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :growth_form %><br>
+    <%= f.select :growth_form, ["arborescent", "tabular", "corymbose", "digitate", "foliaceous", "columnar", "massive", "encrusting"], { :include_blank => true }, { class: "form-control" } %>
+  </div>
+
+  <%#= select_tag :gfo, options_for_select(Coral.all.map {|a| a.growth_form}.uniq, params[:gfo]), class: "form-control" %>
+
+  <div class="form-group">
+    <%= f.label :distance %><br>
+    <%= f.text_field :distance, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes, class: "form-control" %>
+  </div>
+
+  <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+<% end %>

@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-4">
+		<h1>Editing coral</h1>
+
+		<%= render 'form' %>
+
+    <div class="btn-group pull-right">
+      <%= link_to 'Show', @coral, class: "btn btn-default" %>
+      <%= link_to 'Back', corals_path, class: "btn btn-default" %>
+    </div>
+
+  </div>
+
+  <div class="col-md-8">
+
+    <h3>Current Images</h3>
+
+    <% img = @coral.location + '_' + @coral.exposure + '_' + "%03d" % @coral.image_id %>
+    <% @temp_csf = @files_csf.find_all{|item| item.include? img } %>
+
+    <% @temp_csf.each do |i| %>
+      <%= link_to image_tag(image_path('csf/' + i.split('/').last), :width => 325), image_path('csf/' + i.split('/').last) %>
+    <% end %>
+
+    <h3>Outlined Images</h3>
+
+    <% @temp_outline = @files_outline.find_all{|item| item.include? img } %>
+
+    <% @temp_outline.each do |o| %>
+      <%= link_to image_tag(image_path('csf_outlines/' + o.split('/').last), :width => 325), image_path('csf_outlines/' + o.split('/').last) %>
+    <% end %>
+
+  </div>
+</div>
+

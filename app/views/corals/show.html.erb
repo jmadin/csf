@@ -1,0 +1,69 @@
+<div class="row">
+  <div class="col-md-4">
+    <h1>
+      <% if @coral.location=="HI" %>Heron Island<% end %>
+      <% if @coral.location=="LI" %>Lizard Island<% end %>
+      - <%= @coral.exposure %>
+    </h1>
+
+    <p>
+      <strong>Image:</strong>
+      <%= @coral.image_id %>
+    </p>
+
+    <p>
+      <strong>Species:</strong>
+      <%= @coral.species %>
+    </p>
+
+    <p>
+      <strong>Growth form:</strong>
+      <%= @coral.growth_form %>
+    </p>
+
+    <p>
+      <strong>Distance:</strong>
+      <%= @coral.distance %>
+    </p>
+
+    <p>
+      <strong>Notes:</strong>
+      <%= @coral.notes %>
+    </p>
+
+    <div class="btn-group">
+      <%= link_to 'Edit', edit_coral_path(@coral), class: "btn btn-default" %>
+      <%= link_to 'Back', corals_path, class: "btn btn-default" %>
+    </div>
+
+    <h3>Files</h3>
+
+    <% img = @coral.location + '_' + @coral.exposure + '_' + "%03d" % @coral.image_id %>
+    <% @temp = @files.find_all{|item| item.include? img } %>
+
+    <% @temp.each do |file| %>
+      <%= link_to file.split('/').last, @file_path + 'csf_files/' + file.split('/').last  %><br/>
+    <% end %>
+
+  </div>
+
+  <div class="col-md-8">
+    <h3>Current Images</h3>
+
+    <% @temp_csf = @files_csf.find_all{|item| item.include? img } %>
+
+    <% @temp_csf.each do |i| %>
+      <%= link_to image_tag(image_path('csf/' + i.split('/').last), :width => 325), image_path('csf/' + i.split('/').last) %>
+    <% end %>
+
+    <h3>Outlined Images</h3>
+
+    <% @temp_outline = @files_outline.find_all{|item| item.include? img } %>
+
+    <% @temp_outline.each do |o| %>
+      <%= link_to image_tag(image_path('csf_outlines/' + o.split('/').last), :width => 325), image_path('csf_outlines/' + o.split('/').last) %>
+    <% end %>
+
+
+  </div>
+</div>

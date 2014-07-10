@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>Listing corals</h1>
+
+    <%= form_tag corals_path, :method => 'get' do %>
+      <div class="row">
+        <div class="col-md-2">Location</div>
+        <div class="col-md-2">Exposure</div>
+        <div class="col-md-2">Growth form</div>
+        <div class="col-md-6"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2"><%= select_tag :loc, options_for_select(["HI", "LI"], params[:loc]), {:include_blank => true, class: "form-control"} %></div>
+        <div class="col-md-2"><%= select_tag :exp, options_for_select(["E1", "E2", "E3", "E4", "E5", "BM"], params[:exp]), {:include_blank => true, class: "form-control"} %></div>
+        <div class="col-md-2"><%= select_tag :gfo, options_for_select(["arborescent", "tabular", "corymbose", "digitate", "foliaceous", "columnar", "massive", "encrusting"], params[:gfo]), {:include_blank => true, class: "form-control"} %></div>
+        <div class="col-md-6"><%= submit_tag "Filter", class: "btn" %><%= link_to 'Reset', corals_path, class: "btn" %></div>  
+      </div>		    		
+    <% end %>
+
+
+
+    <%= link_to 'New Coral', new_coral_path, class: "btn btn-primary pull-right" %>
+
+    <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th>Location</th>
+          <th>Exposure</th>
+          <th>Image</th>
+          <th>Species</th>
+          <th>Growth form</th>
+          <!-- <th>Distance</th> -->
+          <th>Notes</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @corals.each do |coral| %>
+          <tr>
+            <td>
+              <% if coral.location=="HI" %>
+                Heron Island
+              <% end %>
+              <% if coral.location=="LI" %>
+                Lizard Island
+              <% end %>
+            </td>
+            <td><%= coral.exposure %></td>
+            <td><%= coral.image_id %></td>
+            <td><%= coral.species %></td>
+            <td><%= coral.growth_form %></td>
+            <!-- <td><%# if !coral.distance.blank? %><%#= coral.distance.round(2) %><%# end %></td> -->
+            <td><%= coral.notes %></td>
+            <td>
+              <div class="btn-group">
+                <%= link_to 'Show', coral, class: "btn btn-default" %>
+                <%= link_to 'Edit', edit_coral_path(coral), class: "btn btn-default" %>
+              </div>
+            </td>
+            <!-- <td><%#= link_to 'Destroy', coral, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+  </div>
+</div>
