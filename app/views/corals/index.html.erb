@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-8 col-md-offset-2">
+  <div class="col-md-10 col-md-offset-1">
     <h1>Listing corals</h1>
 
     <%= form_tag corals_path, :method => 'get' do %>
@@ -24,6 +24,7 @@
     <table class="table table-condensed">
       <thead>
         <tr>
+          <th>ID</th>
           <th>Location</th>
           <th>Exposure</th>
           <th>Image</th>
@@ -38,6 +39,7 @@
       <tbody>
         <% @corals.each do |coral| %>
           <tr>
+            <td><%= coral.id %></td>
             <td>
               <% if coral.location=="HI" %>
                 Heron Island

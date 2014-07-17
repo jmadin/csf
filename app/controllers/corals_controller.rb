@@ -58,8 +58,13 @@ class CoralsController < ApplicationController
   # PATCH/PUT /outlines/1.json
   def update
     if @coral.update(coral_params)
-      redirect_to corals_path
-      flash[:success] = "Coral was successfully updated."
+      # redirect_to corals_path
+      if params[:prev]
+        redirect_to edit_coral_path(@coral.id-1)
+      else
+        redirect_to edit_coral_path(@coral.id+1)
+      end
+      # flash[:success] = "Coral was successfully updated."
     else
       render action: 'edit'
     end

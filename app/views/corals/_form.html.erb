@@ -1,6 +1,31 @@
 <%= form_for(@coral) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
+  <div class="btn-group">
+    <%= link_to 'Show', @coral, class: "btn btn-default" %>
+    <% if @coral.id != 1 %>
+      <%= f.submit "Save & Prev", :name => "prev", class: "btn btn-large btn-primary" %>
+    <% else %>
+      <%= link_to 'Save & Prev', '', class: "btn btn-default", style: "color:grey;" %>
+    <% end %>
+    <%= f.submit "Save & Next", class: "btn btn-large btn-primary" %>
+    <%#= link_to 'Back', corals_path, class: "btn btn-default" %>
+  </div>
+
+
+  <h1>Editing</h1>
+
+  <div class="form-group">
+    <%= f.label :species %><br>
+    <%= f.text_field :species, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :growth_form %><br>
+    <%= f.select :growth_form, ["arborescent", "tabular", "corymbose", "digitate", "foliaceous", "columnar", "massive", "encrusting"], { :include_blank => true }, { class: "form-control" } %>
+  </div>
+
+  <hr>
+
   <div class="form-group">
     <%= f.label :location %><br>
     <%#= f.text_field :location, class: "form-control" %>
@@ -13,15 +38,7 @@
   </div>
   <div class="form-group">
     <%= f.label :image_id %><br>
-    <%= f.number_field :image_id, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :species %><br>
-    <%= f.text_field :species, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :growth_form %><br>
-    <%= f.select :growth_form, ["arborescent", "tabular", "corymbose", "digitate", "foliaceous", "columnar", "massive", "encrusting"], { :include_blank => true }, { class: "form-control" } %>
+    <%= @coral.id %>
   </div>
 
   <%#= select_tag :gfo, options_for_select(Coral.all.map {|a| a.growth_form}.uniq, params[:gfo]), class: "form-control" %>
@@ -35,5 +52,5 @@
     <%= f.text_area :notes, class: "form-control" %>
   </div>
 
-  <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+
 <% end %>
