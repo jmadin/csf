@@ -4,7 +4,184 @@
 
     <div class="jumbotron">
 			<h1>Colony Shape<font style="color:orange;"> Factor</font></h1>
+
+	    <% if signed_in? %>
+
+	    	<h2>Lizard Island</h2>
+	    	<table class="table">
+		    	<tr>
+		    		<th></th>
+		    		<th>E1</th>
+		    		<th>E2</th>
+		    		<th>E3</th>
+		    		<th>E4</th>
+		    		<th>E5</th>
+		    		<th>BM</th>
+		    	</tr>
+		    	<tr>
+		    		<td>arborescent</td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E1", "arborescent").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E2", "arborescent").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E3", "arborescent").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E4", "arborescent").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E5", "arborescent").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "BM", "arborescent").size %></td>
+		    	</tr>
+		    	<tr>
+		    		<td>tabular</td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E1", "tabular").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E2", "tabular").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E3", "tabular").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E4", "tabular").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E5", "tabular").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "BM", "tabular").size %></td>
+		    	</tr>
+		    	<tr>
+		    		<td>corymbose</td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E1", "corymbose").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E2", "corymbose").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E3", "corymbose").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E4", "corymbose").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E5", "corymbose").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "BM", "corymbose").size %></td>
+		    	</tr>
+		    	<tr>
+		    		<td>digitate</td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E1", "digitate").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E2", "digitate").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E3", "digitate").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E4", "digitate").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E5", "digitate").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "BM", "digitate").size %></td>
+		    	</tr>
+		    	<tr>
+		    		<td>foliaceous</td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E1", "foliaceous").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E2", "foliaceous").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E3", "foliaceous").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E4", "foliaceous").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E5", "foliaceous").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "BM", "foliaceous").size %></td>
+		    	</tr>
+		    	<tr>
+		    		<td>columnar</td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E1", "columnar").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E2", "columnar").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E3", "columnar").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E4", "columnar").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E5", "columnar").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "BM", "columnar").size %></td>
+		    	</tr>
+		    	<tr>
+		    		<td>massive</td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E1", "massive").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E2", "massive").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E3", "massive").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E4", "massive").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E5", "massive").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "BM", "massive").size %></td>
+		    	</tr>
+		    	<tr>
+		    		<td>encrusting</td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E1", "encrusting").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E2", "encrusting").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E3", "encrusting").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E4", "encrusting").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "E5", "encrusting").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "LI", "BM", "encrusting").size %></td>
+		    	</tr>
+	    	<table>
+
+	    	<h2>Heron Island</h2>
+	    	<table class="table">
+		    	<tr>
+		    		<th></th>
+		    		<th>E1</th>
+		    		<th>E2</th>
+		    		<th>E3</th>
+		    		<th>E4</th>
+		    		<th>E5</th>
+		    		<th>BM</th>
+		    	</tr>
+		    	<tr>
+		    		<td>arborescent</td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E1", "arborescent").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E2", "arborescent").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E3", "arborescent").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E4", "arborescent").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E5", "arborescent").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "BM", "arborescent").size %></td>
+		    	</tr>
+		    	<tr>
+		    		<td>tabular</td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E1", "tabular").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E2", "tabular").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E3", "tabular").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E4", "tabular").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E5", "tabular").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "BM", "tabular").size %></td>
+		    	</tr>
+		    	<tr>
+		    		<td>corymbose</td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E1", "corymbose").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E2", "corymbose").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E3", "corymbose").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E4", "corymbose").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E5", "corymbose").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "BM", "corymbose").size %></td>
+		    	</tr>
+		    	<tr>
+		    		<td>digitate</td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E1", "digitate").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E2", "digitate").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E3", "digitate").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E4", "digitate").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E5", "digitate").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "BM", "digitate").size %></td>
+		    	</tr>
+		    	<tr>
+		    		<td>foliaceous</td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E1", "foliaceous").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E2", "foliaceous").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E3", "foliaceous").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E4", "foliaceous").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E5", "foliaceous").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "BM", "foliaceous").size %></td>
+		    	</tr>
+		    	<tr>
+		    		<td>columnar</td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E1", "columnar").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E2", "columnar").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E3", "columnar").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E4", "columnar").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E5", "columnar").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "BM", "columnar").size %></td>
+		    	</tr>
+		    	<tr>
+		    		<td>massive</td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E1", "massive").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E2", "massive").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E3", "massive").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E4", "massive").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E5", "massive").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "BM", "massive").size %></td>
+		    	</tr>
+		    	<tr>
+		    		<td>encrusting</td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E1", "encrusting").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E2", "encrusting").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E3", "encrusting").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E4", "encrusting").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "E5", "encrusting").size %></td>
+		    		<td><%= Coral.where("location IS ? AND exposure IS ? AND growth_form IS ?", "HI", "BM", "encrusting").size %></td>
+		    	</tr>
+	    	<table>
+
+		 	<% end %>
+
     </div>
+
+
 
   </div>
 </div>  
