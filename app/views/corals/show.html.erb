@@ -1,11 +1,11 @@
 <div class="row">
   <div class="col-md-4">
     <div class="btn-group">
+      <%= link_to 'Next', coral_path(@coral.id+1), class: "btn btn-default" %>
       <%= link_to 'Edit', edit_coral_path(@coral), class: "btn btn-default" %>
       <% if @coral.id != 1 %>
         <%= link_to 'Prev', coral_path(@coral.id-1), class: "btn btn-default" %>
       <% end %>
-      <%= link_to 'Next', coral_path(@coral.id+1), class: "btn btn-default" %>
       <%#= link_to 'Main', corals_path, class: "btn btn-default" %>
     </div>
 

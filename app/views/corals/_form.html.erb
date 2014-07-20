@@ -3,12 +3,12 @@
 
   <div class="btn-group">
     <%= link_to 'Show', @coral, class: "btn btn-default" %>
+    <%= f.submit "Save & Next", class: "btn btn-large btn-primary" %>
     <% if @coral.id != 1 %>
       <%= f.submit "Save & Prev", :name => "prev", class: "btn btn-large btn-primary" %>
     <% else %>
       <%= link_to 'Save & Prev', '', class: "btn btn-default", style: "color:grey;" %>
     <% end %>
-    <%= f.submit "Save & Next", class: "btn btn-large btn-primary" %>
     <%#= link_to 'Back', corals_path, class: "btn btn-default" %>
   </div>
 
